@@ -1,4 +1,4 @@
-package com.syncstream.syncstream.model.user;
+package com.syncstream_dev.syncstream.model.user;
 
 import java.time.LocalDateTime;
 

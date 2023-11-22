@@ -1,11 +1,11 @@
-package com.syncstream.syncstream.model.session;
+package com.syncstream_dev.syncstream.model.session;
 
 import java.util.ArrayList;
 
-import com.syncstream.syncstream.model.ChatStream;
-import com.syncstream.syncstream.model.Genre;
-import com.syncstream.syncstream.model.VideoInfo;
-import com.syncstream.syncstream.model.user.User;
+import com.syncstream_dev.syncstream.model.ChatStream;
+import com.syncstream_dev.syncstream.model.Genre;
+import com.syncstream_dev.syncstream.model.VideoInfo;
+import com.syncstream_dev.syncstream.model.user.User;
 
 public abstract class Session {
     protected String sid;       // Session id

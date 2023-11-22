@@ -1,8 +1,8 @@
-package com.syncstream.syncstream.model.session;
+package com.syncstream_dev.syncstream.model.session;
 
-import com.syncstream.syncstream.model.ChatStream;
-import com.syncstream.syncstream.model.Genre;
-import com.syncstream.syncstream.model.VideoInfo;
+import com.syncstream_dev.syncstream.model.ChatStream;
+import com.syncstream_dev.syncstream.model.Genre;
+import com.syncstream_dev.syncstream.model.VideoInfo;
 
 public class PrivateSession extends Session {
     /*

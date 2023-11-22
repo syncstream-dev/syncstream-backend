@@ -1,4 +1,4 @@
-package com.syncstream.syncstream;
+package com.syncstream_dev.syncstream;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

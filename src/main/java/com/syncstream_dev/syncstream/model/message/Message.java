@@ -1,4 +1,4 @@
-package com.syncstream.syncstream.model.message;
+package com.syncstream_dev.syncstream.model.message;
 
 public abstract class Message {
     protected String mid;     // Message id

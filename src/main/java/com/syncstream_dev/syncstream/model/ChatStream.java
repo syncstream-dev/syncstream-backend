@@ -1,11 +1,11 @@
-package com.syncstream.syncstream.model;
+package com.syncstream_dev.syncstream.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.syncstream.syncstream.model.message.Message;
-import com.syncstream.syncstream.model.message.UserMessage;
-import com.syncstream.syncstream.model.user.User;
+import com.syncstream_dev.syncstream.model.message.Message;
+import com.syncstream_dev.syncstream.model.message.UserMessage;
+import com.syncstream_dev.syncstream.model.user.User;
 
 public class ChatStream {
     private HashMap<String, Message> messages;      // Message id to Message mapping

@@ -1,6 +1,6 @@
-package com.syncstream.syncstream.model.message;
+package com.syncstream_dev.syncstream.model.message;
 
-import com.syncstream.syncstream.model.user.User;
+import com.syncstream_dev.syncstream.model.user.User;
 
 public class UserMessage extends Message {
     private User sender;

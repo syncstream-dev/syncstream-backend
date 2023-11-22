@@ -1,4 +1,4 @@
-package com.syncstream.syncstream.model;
+package com.syncstream_dev.syncstream.model;
 
 public enum Genre {
     CODING,

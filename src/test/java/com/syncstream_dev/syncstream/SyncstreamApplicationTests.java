@@ -1,4 +1,4 @@
-package com.syncstream.syncstream;
+package com.syncstream_dev.syncstream;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
