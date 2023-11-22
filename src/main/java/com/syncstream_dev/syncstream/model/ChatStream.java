@@ -26,4 +26,12 @@ public class ChatStream {
 
         messages.put(msg.getMid(), msg);
     }
+
+    public Message getMessage(String mid) {    // accepts message id (mid)
+        return messages.get(mid);
+    }
+
+    public Boolean userPresent(User user) {
+        return participants.contains(user);
+    }
 }
