@@ -1,24 +1,22 @@
-#[derive(Debug)]
+// session_info.rs implements the composition module SessionInfo
 
-pub struct Session {
-    id: String,
-    host: String,
-    genre: String,
-    participants: Vec<String>,
+pub struct SessionInfo {
+    id: Id,
+    genre: Genre,
+    participants: Vec<User>,
     chat_stream: String,
     video_info: String,
 }
 
-impl Session {
+impl SessionInfo {
     pub fn new(
-        id: String,
-        host: String,
-        genre: String,
-        participants: Vec<String>,
+        id: Id,
+        genre: Genre,
+        participants: Vec<User>,
         chat_stream: String,
         video_info: String,
     ) -> Self {
-        Session {
+        SessionInfo {
             id,
             host,
             genre,
