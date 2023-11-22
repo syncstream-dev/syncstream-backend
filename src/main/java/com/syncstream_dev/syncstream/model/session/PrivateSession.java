@@ -5,10 +5,6 @@ import com.syncstream_dev.syncstream.model.Genre;
 import com.syncstream_dev.syncstream.model.VideoInfo;
 
 public class PrivateSession extends Session {
-    /*
-     *   password: String,
-    max_viewers: int,
-     */
     private String password;
     private int maxViewers;
 
