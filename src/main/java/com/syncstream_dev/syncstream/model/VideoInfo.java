@@ -3,7 +3,7 @@ package com.syncstream_dev.syncstream.model;
 public class VideoInfo {
     private String url;
     private String title;
-    private Long timestamp;
+    private long timestamp;
 
     public VideoInfo(String url, String title, Long timestamp)  {
         this.url = url;
@@ -21,5 +21,20 @@ public class VideoInfo {
 
     public Long getTimestamp() {
         return timestamp;
+    }
+
+    public VideoInfo setUrl(String url) {
+        this.url = url;
+        return this;
+    }
+
+    public VideoInfo setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
+    public VideoInfo setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+        return this;
     }
 }
