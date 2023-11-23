@@ -17,8 +17,7 @@ public class ChatStream {
     }
 
     public void insertMessage(Message msg) {
-        if (msg instanceof UserMessage) {
-            UserMessage userMsg = (UserMessage) msg;
+        if (msg instanceof UserMessage userMsg) {
             if (!participants.contains(userMsg.getSender())) {
                 participants.add(userMsg.getSender());
             }
