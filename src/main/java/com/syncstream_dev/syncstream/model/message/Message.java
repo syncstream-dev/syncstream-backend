@@ -1,18 +1,18 @@
 package com.syncstream_dev.syncstream.model.message;
 
 public abstract class Message {
-    protected String mid;     // Message id
+    protected String messageId;
     protected long timestamp;
     protected String content;
 
-    public Message(String mid, long timestamp, String content) {
-        this.mid = mid;
+    public Message(String messageId, long timestamp, String content) {
+        this.messageId = messageId;
         this.timestamp = timestamp;
         this.content = content;
     }
 
-    public String getMid() {
-        return mid;
+    public String getMessageId() {
+        return messageId;
     }
 
     public long getTimestamp() {

@@ -24,7 +24,7 @@ public class PublicSessionTest {
 
     @Test
     public void testPublicSessionGetters() {
-        assertEquals("1", publicSession.getSid());
+        assertEquals("1", publicSession.getSessionId());
         assertEquals(Genre.CODING, publicSession.getGenre());
         assertEquals(chatStream, publicSession.getChatstream());
         assertEquals(videoInfo, publicSession.getVideoinfo());

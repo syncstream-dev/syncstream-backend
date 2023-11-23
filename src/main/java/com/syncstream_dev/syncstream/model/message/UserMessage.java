@@ -6,8 +6,8 @@ public class UserMessage extends Message {
     private User sender;
     private Boolean flag;
 
-    public UserMessage(String mid, long timestamp, String content, User sender, Boolean flag) {
-        super(mid, timestamp, content);
+    public UserMessage(String messageId, long timestamp, String content, User sender, Boolean flag) {
+        super(messageId, timestamp, content);
         this.sender = sender;
         this.flag = flag;
     }

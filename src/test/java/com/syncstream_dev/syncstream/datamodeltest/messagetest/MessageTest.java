@@ -8,22 +8,22 @@ import com.syncstream_dev.syncstream.model.message.Message;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MessageTest {
-    private String mid;
+    private String messageId;
     private long timestamp;
     private String content;
     private Message message;
 
     @BeforeEach
     public void setUp() {
-        mid = "testMid";
+        messageId = "testMessageId";
         timestamp = 1234567890L;
         content = "testContent";
-        message = new Message(mid, timestamp, content) {};
+        message = new Message(messageId, timestamp, content) {};
     }
 
     @Test
     public void testMessageGetters() {
-        assertEquals(mid, message.getMid());
+        assertEquals(messageId, message.getMessageId());
         assertEquals(timestamp, message.getTimestamp());
         assertEquals(content, message.getContent());
     }

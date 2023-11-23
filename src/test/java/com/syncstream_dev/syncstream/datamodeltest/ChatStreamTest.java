@@ -26,8 +26,7 @@ public class ChatStreamTest {
     @Test
     public void testInsertMessage() {
         chatStream.insertMessage(userMessage);
-
-        assertEquals(userMessage, chatStream.getMessage(userMessage.getMid()));
+        assertEquals(userMessage, chatStream.getMessage(userMessage.getMessageId()));
         assertTrue(chatStream.userPresent(user));
     }
 }

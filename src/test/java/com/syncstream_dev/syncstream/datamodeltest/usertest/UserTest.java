@@ -19,7 +19,7 @@ public class UserTest {
 
     @Test
     public void testUserGetters() {
-        assertEquals("1", user.getUid());
+        assertEquals("1", user.getUserId());
         assertEquals("TestUser", user.getUsername());
         assertEquals("token", user.getUserToken());
         assertEquals(0, user.getMessagesSent());

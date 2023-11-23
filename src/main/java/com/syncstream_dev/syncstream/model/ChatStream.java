@@ -18,13 +18,13 @@ public class ChatStream {
 
     public void insertMessage(Message msg) {
         if (msg instanceof UserMessage) {
-            UserMessage uMsg = (UserMessage) msg;
-            if (!participants.contains(uMsg.getSender())) {
-                participants.add(uMsg.getSender());
+            UserMessage userMsg = (UserMessage) msg;
+            if (!participants.contains(userMsg.getSender())) {
+                participants.add(userMsg.getSender());
             }
         }
 
-        messages.put(msg.getMid(), msg);
+        messages.put(msg.getMessageId(), msg);
     }
 
     public Message getMessage(String mid) {    // accepts message id (mid)
