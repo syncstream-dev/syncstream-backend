@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class UserInfo {
     private String token;
     private String email;
-    private String password;
+    private char[] password;
     private LocalDateTime creationDate;
     private LocalDateTime lastLogin;
     private String avatarUrl;
@@ -13,7 +13,7 @@ public class UserInfo {
     public UserInfo(String token, String email, String password, LocalDateTime creationDate, LocalDateTime lastLogin, String avatarUrl) {
         this.token = token;
         this.email = email;
-        this.password = password;
+        this.password = password.toCharArray();
         this.creationDate = creationDate;
         this.lastLogin = lastLogin;
         this.avatarUrl = avatarUrl;
@@ -27,7 +27,7 @@ public class UserInfo {
         return email;
     }
 
-    public String getPassword() {
+    public char[] getPassword() {
         return password;
     }
 

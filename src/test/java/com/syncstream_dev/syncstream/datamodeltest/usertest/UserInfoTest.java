@@ -26,7 +26,7 @@ public class UserInfoTest {
     public void testUserInfoGetters() {
         assertEquals("token", userInfo.getToken());
         assertEquals("test@example.com", userInfo.getEmail());
-        assertEquals("password", userInfo.getPassword());
+        assertEquals("password".toCharArray(), userInfo.getPassword());
         assertEquals(creationDate, userInfo.getCreationDate());
         assertEquals(lastLogin, userInfo.getLastLogin());
         assertEquals("avatarUrl", userInfo.getAvatarUrl());
