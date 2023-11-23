@@ -10,7 +10,6 @@ import com.syncstream_dev.syncstream.model.VideoInfo;
 import com.syncstream_dev.syncstream.model.session.PublicSession;
 
 public class PublicSessionTest {
-
     private PublicSession publicSession;
     private ChatStream chatStream;
     private VideoInfo videoInfo;
