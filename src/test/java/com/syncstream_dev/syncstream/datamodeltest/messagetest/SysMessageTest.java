@@ -8,22 +8,22 @@ import com.syncstream_dev.syncstream.model.message.SysMessage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SysMessageTest {
-    private String mid;
+    private String messageId;
     private long timestamp;
     private String content;
     private SysMessage sysMessage;
 
     @BeforeEach
     public void setUp() {
-        mid = "testMid";
+        messageId = "testMessageId";
         timestamp = 1234567890L;
         content = "testContent";
-        sysMessage = new SysMessage(mid, timestamp, content);
+        sysMessage = new SysMessage(messageId, timestamp, content);
     }
 
     @Test
     public void testSysMessageGetters() {
-        assertEquals(mid, sysMessage.getMid());
+        assertEquals(messageId, sysMessage.getMessageId());
         assertEquals(timestamp, sysMessage.getTimestamp());
         assertEquals(content, sysMessage.getContent());
     }

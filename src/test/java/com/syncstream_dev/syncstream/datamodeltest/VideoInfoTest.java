@@ -23,9 +23,19 @@ public class VideoInfoTest {
 
     @Test
     public void testVideoInfoGetters() {
-
         assertEquals(expectedUrl, videoInfo.getUrl());
         assertEquals(expectedTitle, videoInfo.getTitle());
         assertEquals(expectedTimestamp, videoInfo.getTimestamp());
+    }
+
+    @Test
+    public void testVideoInfoSetters() {
+        String newExpectedUrl = "http://example2.com";
+        String newExpectedTitle = "New Example Title";
+        long newExpectedTimestamp = 112345678L;
+        videoInfo.setUrl(newExpectedUrl).setTitle(newExpectedTitle).setTimestamp(newExpectedTimestamp);
+        assertEquals(newExpectedUrl, videoInfo.getUrl());
+        assertEquals(newExpectedTitle, videoInfo.getTitle());
+        assertEquals(newExpectedTimestamp, videoInfo.getTimestamp());
     }
 }

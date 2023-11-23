@@ -4,10 +4,10 @@ import com.syncstream_dev.syncstream.model.user.User;
 
 public class UserMessage extends Message {
     private User sender;
-    private Boolean flag;
+    private boolean flag;
 
-    public UserMessage(String mid, long timestamp, String content, User sender, Boolean flag) {
-        super(mid, timestamp, content);
+    public UserMessage(String messageId, long timestamp, String content, User sender, boolean flag) {
+        super(messageId, timestamp, content);
         this.sender = sender;
         this.flag = flag;
     }
@@ -16,7 +16,7 @@ public class UserMessage extends Message {
         return sender;
     }
 
-    public Boolean flag() {
+    public boolean isFlag() {
         return flag;
     }
 }

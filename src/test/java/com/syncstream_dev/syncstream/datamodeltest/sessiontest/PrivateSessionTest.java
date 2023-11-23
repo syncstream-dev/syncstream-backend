@@ -2,6 +2,7 @@ package com.syncstream_dev.syncstream.datamodeltest.sessiontest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.syncstream_dev.syncstream.model.ChatStream;
@@ -10,7 +11,6 @@ import com.syncstream_dev.syncstream.model.VideoInfo;
 import com.syncstream_dev.syncstream.model.session.PrivateSession;
 
 public class PrivateSessionTest {
-
     private PrivateSession privateSession;
     private ChatStream chatStream;
     private VideoInfo videoInfo;
@@ -24,11 +24,11 @@ public class PrivateSessionTest {
 
     @Test
     public void testPrivateSessionGetters() {
-        assertEquals("1", privateSession.getSid());
+        assertEquals("1", privateSession.getSessionId());
         assertEquals(Genre.CODING, privateSession.getGenre());
-        assertEquals(chatStream, privateSession.getChatstream());
-        assertEquals(videoInfo, privateSession.getVideoinfo());
-        assertEquals("password", privateSession.getPassword());
+        assertEquals(chatStream, privateSession.getChatStream());
+        assertEquals(videoInfo, privateSession.getVideoInfo());
+        assertArrayEquals("password".toCharArray(), privateSession.getPassword());
         assertEquals(10, privateSession.getMaxViewers());
     }
 }

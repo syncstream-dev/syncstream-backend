@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ChatStreamTest {
-
     private ChatStream chatStream;
     private User user;
     private UserMessage userMessage;
@@ -26,8 +25,7 @@ public class ChatStreamTest {
     @Test
     public void testInsertMessage() {
         chatStream.insertMessage(userMessage);
-
-        assertEquals(userMessage, chatStream.getMessage(userMessage.getMid()));
+        assertEquals(userMessage, chatStream.getMessage(userMessage.getMessageId()));
         assertTrue(chatStream.userPresent(user));
     }
 }

@@ -11,7 +11,6 @@ import com.syncstream_dev.syncstream.model.session.Session;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SessionTest {
-
     private Session session;
     private ChatStream chatStream;
     private VideoInfo videoInfo;
@@ -25,10 +24,10 @@ public class SessionTest {
 
     @Test
     public void testSessionGetters() {
-        assertEquals("1", session.getSid());
+        assertEquals("1", session.getSessionId());
         assertEquals(Genre.CODING, session.getGenre());
-        assertEquals(chatStream, session.getChatstream());
-        assertEquals(videoInfo, session.getVideoinfo());
+        assertEquals(chatStream, session.getChatStream());
+        assertEquals(videoInfo, session.getVideoInfo());
     }
 }
 

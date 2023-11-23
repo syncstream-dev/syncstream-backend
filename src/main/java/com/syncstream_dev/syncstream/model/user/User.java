@@ -5,16 +5,16 @@ import java.time.LocalDateTime;
 
 public class User {
     private UserInfo userInfo;
-    private String uid;     // User id
+    private String userId;
     private String username;
     private int messagesSent;
     private int points;
 
     // Register User Constructor
-    public User(String uid, String username, String token, String email, String password, String avatarUrl) {
-        // Todo: Database integration
+    public User(String userId, String username, String token, String email, String password, String avatarUrl) {
+        // TODO: Database integration
         this.userInfo = new UserInfo(token, email, password, LocalDateTime.now(), LocalDateTime.now(), avatarUrl);
-        this.uid = uid;
+        this.userId = userId;
         this.username = username;
         this.messagesSent = 0;
         this.points = 0;
@@ -22,7 +22,8 @@ public class User {
 
     // Login User Constructor
     public User(String username, String password) {
-        throw new UnsupportedOperationException("Not implemented yet.");    // Todo: Requires database integration to load user info
+        // TODO: Requires database integration to load user info
+        throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     // Getters
@@ -30,8 +31,8 @@ public class User {
         return userInfo.getToken();
     }
 
-    public String getUid() {
-        return uid;
+    public String getUserId() {
+        return userId;
     }
 
     public String getUsername() {
@@ -50,13 +51,12 @@ public class User {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        User user = (User) obj;
-        return uid.equals(user.uid);
+        if (!(obj instanceof User user)) return false;
+        return userId.equals(user.userId);
     }
 
     @Override
     public int hashCode() {
-        return uid.hashCode();
+        return userId.hashCode();
     }
 }

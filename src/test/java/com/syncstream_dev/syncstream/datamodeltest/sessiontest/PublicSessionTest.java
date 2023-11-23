@@ -10,7 +10,6 @@ import com.syncstream_dev.syncstream.model.VideoInfo;
 import com.syncstream_dev.syncstream.model.session.PublicSession;
 
 public class PublicSessionTest {
-
     private PublicSession publicSession;
     private ChatStream chatStream;
     private VideoInfo videoInfo;
@@ -24,9 +23,9 @@ public class PublicSessionTest {
 
     @Test
     public void testPublicSessionGetters() {
-        assertEquals("1", publicSession.getSid());
+        assertEquals("1", publicSession.getSessionId());
         assertEquals(Genre.CODING, publicSession.getGenre());
-        assertEquals(chatStream, publicSession.getChatstream());
-        assertEquals(videoInfo, publicSession.getVideoinfo());
+        assertEquals(chatStream, publicSession.getChatStream());
+        assertEquals(videoInfo, publicSession.getVideoInfo());
     }
 }

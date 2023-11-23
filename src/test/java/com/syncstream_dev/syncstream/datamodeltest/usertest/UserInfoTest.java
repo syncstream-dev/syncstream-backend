@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import com.syncstream_dev.syncstream.model.user.UserInfo;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDateTime;
 
 public class UserInfoTest {
-
     private UserInfo userInfo;
     private LocalDateTime creationDate;
     private LocalDateTime lastLogin;
@@ -26,7 +26,7 @@ public class UserInfoTest {
     public void testUserInfoGetters() {
         assertEquals("token", userInfo.getToken());
         assertEquals("test@example.com", userInfo.getEmail());
-        assertEquals("password", userInfo.getPassword());
+        assertArrayEquals("password".toCharArray(), userInfo.getPassword());
         assertEquals(creationDate, userInfo.getCreationDate());
         assertEquals(lastLogin, userInfo.getLastLogin());
         assertEquals("avatarUrl", userInfo.getAvatarUrl());

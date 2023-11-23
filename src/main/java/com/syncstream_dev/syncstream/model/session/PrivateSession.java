@@ -5,16 +5,16 @@ import com.syncstream_dev.syncstream.model.Genre;
 import com.syncstream_dev.syncstream.model.VideoInfo;
 
 public class PrivateSession extends Session {
-    private String password;
+    private char[] password;
     private int maxViewers;
 
-    public PrivateSession(String sid, Genre genre, ChatStream chatstream, VideoInfo videoinfo, String password, int maxViewers) {
-        super(sid, genre, chatstream, videoinfo);
-        this.password = password;
+    public PrivateSession(String sessionId, Genre genre, ChatStream chatStream, VideoInfo videoInfo, String password, int maxViewers) {
+        super(sessionId, genre, chatStream, videoInfo);
+        this.password = password.toCharArray();
         this.maxViewers = maxViewers;
     }
 
-    public String getPassword() {
+    public char[] getPassword() {
         return password;
     }
 

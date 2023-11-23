@@ -8,23 +8,23 @@ import com.syncstream_dev.syncstream.model.VideoInfo;
 import com.syncstream_dev.syncstream.model.user.User;
 
 public abstract class Session {
-    protected String sid;       // Session id
+    protected String sessionId;
     protected Genre genre;
     protected ArrayList<User> participants;
-    protected ChatStream chatstream;
-    protected VideoInfo videoinfo;
+    protected ChatStream chatStream;
+    protected VideoInfo videoInfo;
 
     // Create new session
-    public Session(String sid, Genre genre, ChatStream chatstream, VideoInfo videoinfo) {
-        this.sid = sid;
+    public Session(String sessionId, Genre genre, ChatStream chatStream, VideoInfo videoInfo) {
+        this.sessionId = sessionId;
         this.genre = genre;
-        this.participants = new ArrayList<User>();
-        this.chatstream = chatstream;
-        this.videoinfo = videoinfo;
+        this.participants = new ArrayList<>();
+        this.chatStream = chatStream;
+        this.videoInfo = videoInfo;
     }
 
-    public String getSid() {
-        return sid;
+    public String getSessionId() {
+        return sessionId;
     }
 
     public Genre getGenre() {
@@ -35,11 +35,11 @@ public abstract class Session {
         return participants;
     }
 
-    public ChatStream getChatstream() {
-        return chatstream;
+    public ChatStream getChatStream() {
+        return chatStream;
     }
 
-    public VideoInfo getVideoinfo() {
-        return videoinfo;
+    public VideoInfo getVideoInfo() {
+        return videoInfo;
     }
 }
