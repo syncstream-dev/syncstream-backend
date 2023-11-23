@@ -18,7 +18,7 @@ public abstract class Session {
     public Session(String sessionId, Genre genre, ChatStream chatstream, VideoInfo videoinfo) {
         this.sessionId = sessionId;
         this.genre = genre;
-        this.participants = new ArrayList<User>();
+        this.participants = new ArrayList<>();
         this.chatstream = chatstream;
         this.videoinfo = videoinfo;
     }

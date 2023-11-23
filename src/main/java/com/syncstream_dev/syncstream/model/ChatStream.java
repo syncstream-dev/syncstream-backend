@@ -12,8 +12,8 @@ public class ChatStream {
     private ArrayList<User> participants;
 
     public ChatStream() {
-        messages = new HashMap<String, Message>();
-        participants = new ArrayList<User>();
+        messages = new HashMap<>();
+        participants = new ArrayList<>();
     }
 
     public void insertMessage(Message msg) {
