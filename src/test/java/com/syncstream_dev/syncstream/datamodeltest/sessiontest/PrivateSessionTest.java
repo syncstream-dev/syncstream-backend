@@ -28,7 +28,7 @@ public class PrivateSessionTest {
         assertEquals(Genre.CODING, privateSession.getGenre());
         assertEquals(chatStream, privateSession.getChatStream());
         assertEquals(videoInfo, privateSession.getVideoInfo());
-        assertEquals("password", privateSession.getPassword());
+        assertEquals("password".toCharArray(), privateSession.getPassword());
         assertEquals(10, privateSession.getMaxViewers());
     }
 }
