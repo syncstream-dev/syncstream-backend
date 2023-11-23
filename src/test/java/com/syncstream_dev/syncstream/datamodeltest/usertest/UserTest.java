@@ -30,7 +30,6 @@ public class UserTest {
     public void testEquals() {
         User sameUser = new User("1", "TestUser", "token", "test@example.com", "password", "avatarUrl");
         User differentUser = new User("2", "TestUser2", "token2", "test2@example.com", "password2", "avatarUrl2");
-
         assertTrue(user.equals(sameUser));
         assertTrue(!user.equals(differentUser));
     }
@@ -39,7 +38,6 @@ public class UserTest {
     public void testHashCode() {
         User sameUser = new User("1", "TestUser", "token", "test@example.com", "password", "avatarUrl");
         User differentUser = new User("2", "TestUser2", "token2", "test2@example.com", "password2", "avatarUrl2");
-
         assertEquals(user.hashCode(), sameUser.hashCode());
         assertTrue(user.hashCode() != differentUser.hashCode());
     }
