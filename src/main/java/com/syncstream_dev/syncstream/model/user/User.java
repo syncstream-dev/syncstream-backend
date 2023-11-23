@@ -12,7 +12,7 @@ public class User {
 
     // Register User Constructor
     public User(String userId, String username, String token, String email, String password, String avatarUrl) {
-        // Todo: Database integration
+        // TODO: Database integration
         this.userInfo = new UserInfo(token, email, password, LocalDateTime.now(), LocalDateTime.now(), avatarUrl);
         this.userId = userId;
         this.username = username;
@@ -22,7 +22,8 @@ public class User {
 
     // Login User Constructor
     public User(String username, String password) {
-        throw new UnsupportedOperationException("Not implemented yet.");    // Todo: Requires database integration to load user info
+        // TODO: Requires database integration to load user info
+        throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     // Getters
