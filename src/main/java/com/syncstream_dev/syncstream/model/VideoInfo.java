@@ -5,7 +5,7 @@ public class VideoInfo {
     private String title;
     private long timestamp;
 
-    public VideoInfo(String url, String title, Long timestamp)  {
+    public VideoInfo(String url, String title, long timestamp)  {
         this.url = url;
         this.title = title;
         this.timestamp = timestamp;
@@ -19,7 +19,7 @@ public class VideoInfo {
         return title;
     }
 
-    public Long getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
