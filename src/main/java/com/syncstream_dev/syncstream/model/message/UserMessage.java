@@ -16,7 +16,7 @@ public class UserMessage extends Message {
         return sender;
     }
 
-    public Boolean flag() {
+    public Boolean isFlag() {
         return flag;
     }
 }

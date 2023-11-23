@@ -32,6 +32,6 @@ public class UserMessageTest {
         assertEquals(timestamp, userMessage.getTimestamp());
         assertEquals(content, userMessage.getContent());
         assertEquals(sender, userMessage.getSender());
-        assertEquals(flag, userMessage.flag());
+        assertEquals(flag, userMessage.isFlag());
     }
 }
