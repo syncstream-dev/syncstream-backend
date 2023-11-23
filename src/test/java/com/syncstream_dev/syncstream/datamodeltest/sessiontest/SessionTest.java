@@ -27,8 +27,8 @@ public class SessionTest {
     public void testSessionGetters() {
         assertEquals("1", session.getSessionId());
         assertEquals(Genre.CODING, session.getGenre());
-        assertEquals(chatStream, session.getChatstream());
-        assertEquals(videoInfo, session.getVideoinfo());
+        assertEquals(chatStream, session.getChatStream());
+        assertEquals(videoInfo, session.getVideoInfo());
     }
 }
 

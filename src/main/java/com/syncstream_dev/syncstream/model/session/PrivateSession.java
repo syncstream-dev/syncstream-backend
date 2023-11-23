@@ -8,8 +8,8 @@ public class PrivateSession extends Session {
     private String password;
     private int maxViewers;
 
-    public PrivateSession(String sessionId, Genre genre, ChatStream chatstream, VideoInfo videoinfo, String password, int maxViewers) {
-        super(sessionId, genre, chatstream, videoinfo);
+    public PrivateSession(String sessionId, Genre genre, ChatStream chatStream, VideoInfo videoInfo, String password, int maxViewers) {
+        super(sessionId, genre, chatStream, videoInfo);
         this.password = password;
         this.maxViewers = maxViewers;
     }

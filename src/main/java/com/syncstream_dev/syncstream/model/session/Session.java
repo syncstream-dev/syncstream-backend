@@ -11,16 +11,16 @@ public abstract class Session {
     protected String sessionId;
     protected Genre genre;
     protected ArrayList<User> participants;
-    protected ChatStream chatstream;
-    protected VideoInfo videoinfo;
+    protected ChatStream chatStream;
+    protected VideoInfo videoInfo;
 
     // Create new session
-    public Session(String sessionId, Genre genre, ChatStream chatstream, VideoInfo videoinfo) {
+    public Session(String sessionId, Genre genre, ChatStream chatStream, VideoInfo videoInfo) {
         this.sessionId = sessionId;
         this.genre = genre;
         this.participants = new ArrayList<>();
-        this.chatstream = chatstream;
-        this.videoinfo = videoinfo;
+        this.chatStream = chatStream;
+        this.videoInfo = videoInfo;
     }
 
     public String getSessionId() {
@@ -35,11 +35,11 @@ public abstract class Session {
         return participants;
     }
 
-    public ChatStream getChatstream() {
-        return chatstream;
+    public ChatStream getChatStream() {
+        return chatStream;
     }
 
-    public VideoInfo getVideoinfo() {
-        return videoinfo;
+    public VideoInfo getVideoInfo() {
+        return videoInfo;
     }
 }
