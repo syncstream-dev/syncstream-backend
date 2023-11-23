@@ -30,7 +30,7 @@ public class ChatStream {
         return messages.get(mid);
     }
 
-    public Boolean userPresent(User user) {
+    public boolean userPresent(User user) {
         return participants.contains(user);
     }
 }

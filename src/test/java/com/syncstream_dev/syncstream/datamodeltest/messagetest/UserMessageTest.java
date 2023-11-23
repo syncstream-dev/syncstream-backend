@@ -13,7 +13,7 @@ public class UserMessageTest {
     private long timestamp;
     private String content;
     private User sender;
-    private Boolean flag;
+    private boolean flag;
     private UserMessage userMessage;
 
     @BeforeEach
