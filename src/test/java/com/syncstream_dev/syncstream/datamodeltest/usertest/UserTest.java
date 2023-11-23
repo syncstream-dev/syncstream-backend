@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import com.syncstream_dev.syncstream.model.user.User;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserTest {
@@ -32,7 +32,7 @@ public class UserTest {
         User sameUser = new User("1", "TestUser", "token", "test@example.com", "password", "avatarUrl");
         User differentUser = new User("2", "TestUser2", "token2", "test2@example.com", "password2", "avatarUrl2");
         assertEquals(user, sameUser);
-        assertFalse(user.equals(differentUser));
+        assertNotEquals(user, differentUser);
     }
 
     @Test
