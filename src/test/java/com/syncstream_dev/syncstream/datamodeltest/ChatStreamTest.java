@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import com.syncstream_dev.syncstream.model.ChatStream;
 import com.syncstream_dev.syncstream.model.message.UserMessage;
-import com.syncstream_dev.syncstream.model.user.User;
+import com.syncstream_dev.syncstream.model.User;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

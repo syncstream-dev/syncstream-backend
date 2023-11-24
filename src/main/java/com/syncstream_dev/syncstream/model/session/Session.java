@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.syncstream_dev.syncstream.model.ChatStream;
 import com.syncstream_dev.syncstream.model.Genre;
 import com.syncstream_dev.syncstream.model.VideoInfo;
-import com.syncstream_dev.syncstream.model.user.User;
+import com.syncstream_dev.syncstream.model.User;
 
 public abstract class Session {
     protected String sessionId;

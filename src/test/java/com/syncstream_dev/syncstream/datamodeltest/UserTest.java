@@ -1,12 +1,14 @@
-package com.syncstream_dev.syncstream.datamodeltest.usertest;
+package com.syncstream_dev.syncstream.datamodeltest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.syncstream_dev.syncstream.model.user.User;
+import com.syncstream_dev.syncstream.model.User;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserTest {
@@ -21,9 +23,14 @@ public class UserTest {
     public void testUserGetters() {
         assertEquals("1", user.getUserId());
         assertEquals("TestUser", user.getUsername());
-        assertEquals("token", user.getUserToken());
+        assertEquals("token", user.getToken());
         assertEquals(0, user.getMessagesSent());
         assertEquals(0, user.getPoints());
+        assertEquals("test@example.com", user.getEmail());
+        assertArrayEquals("password".toCharArray(), user.getPassword());
+        assertEquals("avatarUrl", user.getAvatarUrl());
+        assertNotNull(user.getCreationDate());
+        assertNotNull(user.getLastLogin());
     }
 
     @Test
