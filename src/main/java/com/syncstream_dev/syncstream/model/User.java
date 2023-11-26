@@ -1,10 +1,16 @@
 package com.syncstream_dev.syncstream.model;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
+
 import java.time.LocalDateTime;
 
-
+@Table("users")
 public class User {
+    @PrimaryKey
     private String userId;
+
     private String username;
     private int messagesSent;
     private int points;
@@ -35,6 +41,9 @@ public class User {
         // TODO: Requires database integration to load user info
         throw new UnsupportedOperationException("Not implemented yet.");
     }
+
+    // Default Constructor for Cassandra Queries
+    protected User() {}
 
     // Getters
     public String getUserId() {
