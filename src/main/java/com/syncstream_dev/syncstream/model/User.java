@@ -1,6 +1,5 @@
 package com.syncstream_dev.syncstream.model;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -23,7 +22,6 @@ public class User {
 
     // Register User Constructor
     public User(String userId, String username, String token, String email, String password, String avatarUrl) {
-        // TODO: Database integration
         this.userId = userId;
         this.username = username;
         this.messagesSent = 0;
