@@ -27,7 +27,7 @@ jobs:
           - 9042:9042
         options: --health-cmd "cqlsh --debug" --health-interval 5s --health-retries 30
         volumes:
-          - ./.github/init/init.cql:/docker-entrypoint-initdb.d/init.cql
+          - ./.cassandra_init/init.cql:/docker-entrypoint-initdb.d/init.cql
 
     steps:
     - uses: actions/checkout@v2
