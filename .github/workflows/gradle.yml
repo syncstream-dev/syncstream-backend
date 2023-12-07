@@ -30,6 +30,8 @@ jobs:
           - ./.cassandra_init/init.cql:/docker-entrypoint-initdb.d/init.cql
 
     steps:
+    - name: Change permissions of init.cql
+      run: sudo chmod 777 ./.cassandra_init/init.cql
     - uses: actions/checkout@v2
     - name: Set up JDK 18
       uses: actions/setup-java@v2
