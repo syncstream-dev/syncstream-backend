@@ -25,9 +25,7 @@ jobs:
         image: cassandra
         ports:
           - 9042:9042
-        options: --health-cmd "cqlsh --debug" --health-interval 5s --health-retries 30
-        volumes:
-          - ./.cassandra_init/init.cql:/docker-entrypoint-initdb.d/init.cql
+        options: --health-cmd "cqlsh --debug" --health-interval 5s --health-retries 10
 
     steps:
     - name: Change permissions of init.cql
@@ -38,6 +36,9 @@ jobs:
       with:
         java-version: '18'
         distribution: 'temurin'
+    - name: Create Cassandra keyspace
+      run: |
+        echo "CREATE KEYSPACE spring_cassandra WITH replication = {'class':'SimpleStrategy', 'replication_factor':1};" | docker exec -i cassandra cqlsh
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
