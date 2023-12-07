@@ -18,8 +18,16 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    services:
+      cassandra:
+        image: cassandra
+        ports:
+          - 9042:9042
+        options: --health-cmd "cqlsh --debug" --health-interval 5s --health-retries 30
+        volumes:
+          - ./.github/init/init.cql:/docker-entrypoint-initdb.d/init.cql
 
     steps:
     - uses: actions/checkout@v2
