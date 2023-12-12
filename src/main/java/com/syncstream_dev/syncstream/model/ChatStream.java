@@ -5,7 +5,6 @@ import java.util.HashMap;
 
 import com.syncstream_dev.syncstream.model.message.Message;
 import com.syncstream_dev.syncstream.model.message.UserMessage;
-import com.syncstream_dev.syncstream.model.user.User;
 
 public class ChatStream {
     private HashMap<String, Message> messages;      // Message id to Message mapping

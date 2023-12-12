@@ -18,8 +18,14 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    services:
+      cassandra:
+        image: cassandra
+        ports:
+          - 9042:9042
+        options: --health-cmd "cqlsh --debug" --health-interval 5s --health-retries 30
 
     steps:
     - uses: actions/checkout@v2
@@ -28,6 +34,10 @@ jobs:
       with:
         java-version: '18'
         distribution: 'temurin'
+    - name: Create Cassandra keyspace
+      run: |
+        CASSANDRA_CONTAINER=$(docker ps --filter "ancestor=cassandra" --format "{{.Names}}")
+        echo "CREATE KEYSPACE spring_cassandra WITH replication = {'class':'SimpleStrategy', 'replication_factor':1};" | docker exec -i $CASSANDRA_CONTAINER cqlsh
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:

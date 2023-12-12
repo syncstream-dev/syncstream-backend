@@ -1,23 +1,37 @@
-package com.syncstream_dev.syncstream.model.user;
+package com.syncstream_dev.syncstream.model;
+
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.time.LocalDateTime;
 
-
+@Table("users")
 public class User {
-    private UserInfo userInfo;
+    @PrimaryKey
     private String userId;
+
     private String username;
     private int messagesSent;
     private int points;
+    private String token;
+    private String email;
+    private char[] password;
+    private LocalDateTime creationDate;
+    private LocalDateTime lastLogin;
+    private String avatarUrl;
 
     // Register User Constructor
     public User(String userId, String username, String token, String email, String password, String avatarUrl) {
-        // TODO: Database integration
-        this.userInfo = new UserInfo(token, email, password, LocalDateTime.now(), LocalDateTime.now(), avatarUrl);
         this.userId = userId;
         this.username = username;
         this.messagesSent = 0;
         this.points = 0;
+        this.token = token;
+        this.email = email;
+        this.password = password.toCharArray();
+        this.creationDate = LocalDateTime.now();
+        this.lastLogin = LocalDateTime.now();
+        this.avatarUrl = avatarUrl;
     }
 
     // Login User Constructor
@@ -26,11 +40,10 @@ public class User {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
-    // Getters
-    public String getUserToken() {
-        return userInfo.getToken();
-    }
+    // Default Constructor for Cassandra Queries
+    protected User() {}
 
+    // Getters
     public String getUserId() {
         return userId;
     }
@@ -45,6 +58,30 @@ public class User {
 
     public int getPoints() {
         return points;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public char[] getPassword() {
+        return password;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    public LocalDateTime getLastLogin() {
+        return lastLogin;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
     // Overrides
