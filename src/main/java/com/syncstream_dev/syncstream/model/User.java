@@ -34,12 +34,6 @@ public class User {
         this.avatarUrl = avatarUrl;
     }
 
-    // Login User Constructor
-    public User(String username, String password) {
-        // TODO: Requires database integration to load user info
-        throw new UnsupportedOperationException("Not implemented yet.");
-    }
-
     // Default Constructor for Cassandra Queries
     protected User() {}
 
