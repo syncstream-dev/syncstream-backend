@@ -20,7 +20,7 @@ public class User {
     private LocalDateTime lastLogin;
     private String avatarUrl;
 
-    // Register User Constructor
+    // Constructor for creating new user
     public User(String userId, String username, String token, String email, String password, String avatarUrl) {
         this.userId = userId;
         this.username = username;
