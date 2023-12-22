@@ -4,11 +4,12 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Table("users")
 public class User {
     @PrimaryKey
-    private String userId;
+    private UUID userId;
 
     private String username;
     private int messagesSent;
@@ -21,7 +22,7 @@ public class User {
     private String avatarUrl;
 
     // Constructor for creating new user
-    public User(String userId, String username, String token, String email, String password, String avatarUrl) {
+    public User(UUID userId, String username, String token, String email, String password, String avatarUrl) {
         this.userId = userId;
         this.username = username;
         this.messagesSent = 0;
@@ -38,7 +39,7 @@ public class User {
     protected User() {}
 
     // Getters
-    public String getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 

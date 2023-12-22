@@ -2,11 +2,12 @@ package com.syncstream_dev.syncstream.datamodeltest.messagetest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.syncstream_dev.syncstream.model.message.UserMessage;
 import com.syncstream_dev.syncstream.model.User;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.UUID;
 
 public class UserMessageTest {
     private String messageId;
@@ -21,7 +22,7 @@ public class UserMessageTest {
         messageId = "testMessageId";
         timestamp = 1234567890L;
         content = "testContent";
-        sender = new User("1", "TestUser", "token", "test@example.com", "password", "avatarUrl");
+        sender = new User(UUID.randomUUID(), "TestUser", "token", "test@example.com", "password", "avatarUrl");
         flag = true;
         userMessage = new UserMessage(messageId, timestamp, content, sender, flag);
     }
