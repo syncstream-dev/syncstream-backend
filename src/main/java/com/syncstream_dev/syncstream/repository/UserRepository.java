@@ -8,5 +8,7 @@ import java.util.UUID;
 
 @Repository
 public interface UserRepository extends CassandraRepository<User, UUID> {
-    // Custom Queries
+    boolean existsByUsername(String username);
+    boolean existsByEmail(String email);
+    User findByUsername(String username);
 }
