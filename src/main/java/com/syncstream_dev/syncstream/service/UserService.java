@@ -2,11 +2,14 @@ package com.syncstream_dev.syncstream.service;
 
 import com.syncstream_dev.syncstream.exception.DuplicateEmailException;
 import com.syncstream_dev.syncstream.exception.DuplicateUsernameException;
+import com.syncstream_dev.syncstream.exception.InvalidPasswordException;
+import com.syncstream_dev.syncstream.exception.UsernameNotFoundException;
 import com.syncstream_dev.syncstream.model.User;
 import com.syncstream_dev.syncstream.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.UUID;
 
 @Service
@@ -40,8 +43,13 @@ public class UserService {
     }
 
     public User login(String username, String password) throws Exception {
-        // Retrieve the user from the database
-        // Check the password and throw an exception if it doesn't match
-        // Return the user
+        User user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("Username does not exist in database");
+        } else if (!Arrays.equals(user.getPassword(), password.toCharArray())) {
+            throw new InvalidPasswordException("Password is incorrect");
+        }
+
+        return user;
     }
 }
