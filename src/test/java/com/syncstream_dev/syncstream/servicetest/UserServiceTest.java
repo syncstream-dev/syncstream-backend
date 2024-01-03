@@ -28,18 +28,27 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testRegisterAndLogin() throws Exception {
-        User user = new User(UUID.randomUUID(), "username", "token", "email", "password", "avatarUrl");
-        when(userRepository.existsByUsername(user.getUsername())).thenReturn(false);
-        when(userRepository.existsByEmail(user.getEmail())).thenReturn(false);
-        when(userRepository.existsById(user.getUserId())).thenReturn(false);
-        when(userRepository.save(any(User.class))).thenReturn(user);
+    public void testRegister() throws Exception {
+        String username = "username";
+        String email = "email";
+        String password = "password";
+        String avatarUrl = "avatarUrl";
 
-        User result = userService.register(user.getUsername(), user.getEmail(), Arrays.toString(user.getPassword()), user.getAvatarUrl());
+        when(userRepository.existsByUsername(username)).thenReturn(false);
+        when(userRepository.existsByEmail(email)).thenReturn(false);
+        when(userRepository.existsById(any(UUID.class))).thenReturn(false);
+        when(userRepository.save(any(User.class))).thenAnswer(i -> i.getArguments()[0]);
 
-        assertEquals(user, result);
-        verify(userRepository, times(1)).save(user);
+        User result = userService.register(username, email, password, avatarUrl);
+
+        assertEquals(username, result.getUsername());
+        assertEquals(email, result.getEmail());
+        assertEquals(password.toCharArray(), result.getPassword());
+        assertEquals(avatarUrl, result.getAvatarUrl());
+
+        verify(userRepository, times(1)).save(any(User.class));
     }
+
 
     @Test
     public void testLogin() throws Exception {
